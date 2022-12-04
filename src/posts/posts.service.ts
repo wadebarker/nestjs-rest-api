@@ -52,7 +52,7 @@ export class PostsService {
     this.logger.log('Delete post by id');
     const index: number = this.posts.findIndex((post) => post.id === id);
     if (index === -1) {
-      throw new NotFoundException('Post was not found');
+      throw new NotFoundException('Post not found');
     }
     this.posts.splice(index, 1);
   }
