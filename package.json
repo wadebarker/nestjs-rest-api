@@ -1,8 +1,8 @@
 {
   "name": "server",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Creating RestAPI app using nestjs",
+  "author": "Vadim Zviagintsev",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
