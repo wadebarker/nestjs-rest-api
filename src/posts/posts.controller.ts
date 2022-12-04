@@ -43,7 +43,7 @@ export class PostsController {
     return this.postsService.create(post);
   }
 
-  @Delete('id')
+  @Delete(':id')
   @ApiOkResponse({ description: 'Post deleted successfully.' })
   @ApiNotFoundResponse({ description: 'Post not found.' })
   public delete(@Param('id', ParseIntPipe) id: number): void {
