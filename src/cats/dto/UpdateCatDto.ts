@@ -1,4 +1,4 @@
-import { IsInt, IsOptional, IsString, Length } from 'class-validator';
+import { IsString, IsAlpha, IsInt, IsOptional, Length } from 'class-validator';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class UpdateCatDto {
@@ -9,6 +9,7 @@ export class UpdateCatDto {
   })
   @IsOptional()
   @IsString()
+  @IsAlpha()
   @Length(2, 20)
   name?: string;
 
@@ -28,6 +29,7 @@ export class UpdateCatDto {
   })
   @IsOptional()
   @IsString()
+  @IsAlpha()
   @Length(2, 20)
   breed?: string;
 }

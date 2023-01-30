@@ -1,4 +1,4 @@
-import { IsString, Length, IsInt, Min, Max } from 'class-validator';
+import { IsString, IsInt, IsAlpha, Length, Min, Max } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateCatDto {
@@ -8,6 +8,7 @@ export class CreateCatDto {
     default: '',
   })
   @IsString()
+  @IsAlpha()
   @Length(2, 20)
   name: string;
 
@@ -29,6 +30,7 @@ export class CreateCatDto {
     default: '',
   })
   @IsString()
+  @IsAlpha()
   @Length(2, 20)
   breed: string;
 }
