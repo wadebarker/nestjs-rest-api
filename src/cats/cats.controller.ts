@@ -13,16 +13,15 @@ import {
 import {
   ApiTags,
   ApiOperation,
-  ApiResponse,
   ApiOkResponse,
   ApiCreatedResponse,
   ApiNoContentResponse,
   ApiNotFoundResponse,
-  ApiBody,
   ApiQuery,
+  ApiBadRequestResponse,
 } from '@nestjs/swagger';
 import { CatsService } from './cats.service';
-import { Cat } from './entities/cat.entity';
+import { Cat } from './entity/cat.entity';
 import { CreateCatDto } from './dto/CreateCatDto';
 import { UpdateCatDto } from './dto/UpdateCatDto';
 
@@ -64,6 +63,9 @@ export class CatsController {
     status: 201,
     description: 'The cat successfully created',
     type: CreateCatDto,
+  })
+  @ApiBadRequestResponse({
+    description: 'Body is not valid',
   })
   create(@Body() createCatDto: CreateCatDto): Cat {
     return this.catService.create(createCatDto);

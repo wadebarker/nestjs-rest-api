@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Cat } from './entities/cat.entity';
+import { Cat } from './entity/cat.entity';
 import { CreateCatDto } from './dto/CreateCatDto';
 import { UpdateCatDto } from './dto/UpdateCatDto';
 
